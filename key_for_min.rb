@@ -5,5 +5,11 @@ def key_for_min_value(name_hash)
   return nil if name_hash.size == 0
 
   min, min_key
-  name_hash.each {}
+  name_hash.each do |key, value|
+    if min == nil || value < min
+      min = value
+      min_key = key
+    end
+  end
+  min_key
 end
